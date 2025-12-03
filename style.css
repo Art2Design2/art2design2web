@@ -27,7 +27,7 @@
 /* --- Navigation Styles --- */
 nav {
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
     padding: 20px 0;
     background-color: var(--color-secondary-light); /* ABC4FF */
@@ -191,4 +191,125 @@ nav a:hover {
 .submit-button:hover {
     background-color: var(--color-tertiary); /* FFD6FF */
     color: var(--text-dark);
+}
+
+/* --- Three Step Section Styles --- */
+/* --- Three Step Section Styles (BASE STYLES FOR LARGE SCREENS) --- */
+
+.three-step-section {
+    display: flex; /* Enables the three-column layout */
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 0 20px;
+    gap: 30px;
+}
+
+.step-card {
+    /* Make each column narrow and flexible */
+    flex-basis: 30%; /* Stays narrow on large screens */
+    text-align: center;
+    padding: 20px;
+    background-color: var(--color-primary-light);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ------------------------------------------------------------------ */
+/* 📱 MOBILE RESPONSIVENESS (Media Query) 📱 */
+/* ------------------------------------------------------------------ */
+
+@media (max-width: 768px) {
+    
+    .three-step-section {
+        /* This is the key change! */
+        /* Changes the main container from a row of items to a column */
+        flex-direction: column; 
+        
+        /* Optional: Change gap for vertical spacing */
+        gap: 40px; 
+    }
+
+    .step-card {
+        /* When in a column, flex-basis: auto makes the card take full available width */
+        flex-basis: auto; 
+        
+        /* Optional: Add a little padding for smaller screens */
+        padding: 30px 20px;
+    }
+
+    /* Optional: Center align the navigation on mobile */
+    nav {
+        justify-content: center;
+        flex-wrap: wrap; /* Allows links to wrap if there are too many */
+    }
+}
+.three-step-section {
+    display: flex; /* Enables the three-column layout */
+    justify-content: space-between; /* Puts space between the columns */
+    max-width: 1000px; /* Controls the overall width */
+    margin: 50px auto; /* Centers the section horizontally */
+    padding: 0 20px;
+    gap: 30px; /* Space between the cards */
+}
+
+.step-card {
+    /* Make each column narrow and flexible */
+    flex-basis: 30%; 
+    text-align: center;
+    padding: 20px;
+    background-color: var(--color-primary-light); /* E2EAFC */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.step-circle {
+    /* Defines the circle with the number */
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    
+    /* Styling for the number inside */
+    background-color: var(--color-secondary-mid); /* C8B6FF */
+    color: var(--color-white); 
+    font-size: 36px;
+    font-weight: bold;
+    
+    /* Center the number */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Center the circle within the card */
+    margin: 0 auto 15px auto; 
+}
+
+.step-card h3 {
+    font-size: 1.4rem;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.step-card p {
+    font-size: 1rem;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.info-button {
+    background-color: var(--color-secondary-light); /* ABC4FF */
+    color: var(--color-white);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.info-button:hover {
+    background-color: var(--color-primary-mid); /* B8C0FF */
 }
